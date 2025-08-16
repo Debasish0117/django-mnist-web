@@ -1,6 +1,6 @@
 ## Django + MNIST 在线识别（Web 项目）
 
-本项目参考你提供的 `chapter04-01` 课程资料结构（`djangoproject/`、`vision/`、`manage.py` 等），复刻为一个可直接运行的 Django Web 项目：
+Django Web 项目内容：
 
 - 前端上传手写数字图片
 - 后端加载 CNN 模型权重进行推理
