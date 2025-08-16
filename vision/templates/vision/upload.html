@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>MNIST 数字识别</title>
+  </head>
+  <body>
+    <h1>上传手写数字图片</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">预测</button>
+    </form>
+  </body>
+</html>
+
+
